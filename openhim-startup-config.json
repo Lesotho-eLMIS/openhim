@@ -1,0 +1,120 @@
+{
+  "Users": [
+    {
+      "firstname": "Super",
+      "surname": "User",
+      "email": "root@openhim.org",
+      "provider": "local",
+      "groups": [
+        "admin"
+      ],
+      "passwordAlgorithm": null,
+      "passwordHash": null,
+      "passwordSalt": null,
+      "expiry": null,
+      "locked": false,
+      "token": null,
+      "tokenType": null
+    }
+  ],
+  "Clients": [
+    {
+      "clientID": "odoo",
+      "name": "odoo",
+      "roles": [
+        "manager"
+      ],
+      "passwordAlgorithm": "sha512",
+      "passwordHash": "680676d5fa08fe963093f6d86a98a77fb1bef333a868e87b4c438563780bc3fedb16762e9fa3493337174187f6712c1519d55a4aff0546c72c18092d68e9cd9c",
+      "passwordSalt": "d90979ce21553071c7b1e54ba8785ef2",
+      "organization": "Ministry Of Health",
+      "softwareName": "odoo",
+      "description": ""
+    },
+    {
+      "clientID": "elmis",
+      "name": "elmis",
+      "roles": [
+        "manager"
+      ],
+      "passwordAlgorithm": "sha512",
+      "passwordHash": "fea0dcc9931eab97d55df587761c06b8bed683f5dccef05b0f421287722a38da3793cc7503ad9d0e10e4eedd38c8a303df9aa5aea8684eb66ad5e024f58c2b0e",
+      "passwordSalt": "09c728bb68ffb9628d7f0a7cd904afb8",
+      "organization": "Ministry Of Health",
+      "softwareName": "OpenLMIS"
+    }
+  ],
+  "Channels": [
+    {
+      "name": "OpenLMIS Stock Data to Odoo",
+      "description": "Allows Odoo to request OpenLMIS stock data through OpenHIM.",
+      "urlPattern": "^/api/facilities.*$",
+      "isAsynchronousProcess": false,
+      "methods": [
+        "GET",
+        "POST",
+        "DELETE",
+        "PUT",
+        "OPTIONS",
+        "HEAD",
+        "TRACE",
+        "CONNECT",
+        "PATCH"
+      ],
+      "type": "http",
+      "tcpPort": null,
+      "tcpHost": null,
+      "pollingSchedule": null,
+      "requestBody": true,
+      "responseBody": true,
+      "allow": [
+        "odoo",
+        "elmis"
+      ],
+      "whitelist": [],
+      "authType": "public",
+      "routes": [
+        {
+          "name": "OpenLMIS Facilities",
+          "type": "http",
+          "status": "enabled",
+          "secured": true,
+          "host": "dev.elmis.gov.ls",
+          "port": 443,
+          "path": "",
+          "pathTransform": "",
+          "primary": true,
+          "username": "admin",
+          "password": "password",
+          "forwardAuthHeader": true,
+          "waitPrimaryResponse": false,
+          "statusCodesCheck": "",
+          "kafkaClientId": "",
+          "kafkaTopic": ""
+        }
+      ],
+      "matchContentTypes": [],
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentJson": null,
+      "matchContentValue": null,
+      "properties": [],
+      "txViewAcl": [],
+      "txViewFullAcl": [],
+      "txRerunAcl": [],
+      "status": "enabled",
+      "rewriteUrls": false,
+      "addAutoRewriteRules": true,
+      "rewriteUrlsConfig": [],
+      "autoRetryEnabled": false,
+      "autoRetryPeriodMinutes": 60,
+      "updatedBy": {
+        "id": "6a1636a00a6968f09a688bf3",
+        "name": "Super User"
+      },
+      "alerts": []
+    }
+  ],
+  "Mediators": [],
+  "ContactGroups": []
+}

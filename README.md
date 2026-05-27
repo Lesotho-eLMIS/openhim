@@ -8,4 +8,4 @@
 docker-compose build && docker-compose up -d
 ```
 
-3. Access on localhost:9000 or at <your_server>:9000
+3. Access on localhost:9000 or at <your_server>:9010
